@@ -27,23 +27,16 @@
 9 - 1218273645
 10 - 141923283746 '''
 
-p = print
-n = int(input("введите число от 3 до 20: "))
 
-result=''
-result_temp = 0
-set_= set({})                   # {} class set      () class tuple      [] class list
-for i in range(1, n + 1):
-    for l in range(1, n + 1):
-        if n % (i + l) == 0:
-            if i < l:           # сортируем от меньшего к большему
-                result_temp = int(str(i) + str(l))
-            if i > l:
-                result_temp = int(str(l) + str(i))
-            set_.add(result_temp)   # добавляем в множество для уникальзации
+p = print;
+n = int(input("введите число: "))
+result=''; result_temp = "";
+for i in range(1, n):
+    #p('#1 i: ',i)
+    for i2 in range(i+1, n):
+        #p('##2 i2:',i2 )
+        if n % (i + i2) == 0:
+            result = result + str(i) + str(i2)
+            #p('###3 result: ',result, ' because - i: ',i,', i2 : ',i2)
 
-for i in sorted(set_):              # сортируем, получаем список (list)
-    result=result+str(i)            # пересобираем в строку (str)
-
-result=int(result)
 p(result)
