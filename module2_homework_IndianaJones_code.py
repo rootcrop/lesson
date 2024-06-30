@@ -30,7 +30,7 @@
 
 p = print;
 n = int(input("введите число: "))
-result=''; result_temp = "";
+result='';
 for i in range(1, n):
     #p('#1 i: ',i)
     for i2 in range(i+1, n):
