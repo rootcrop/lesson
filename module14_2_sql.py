@@ -1,5 +1,4 @@
-import time, random
-import sqlite3
+import time, random, sqlite3
 
 start_time=time.time()
 connection = sqlite3.connect('not_telegram.db')
@@ -48,4 +47,4 @@ print(all_balance/all)
 connection.commit()
 connection.close()
 
-print(f'время исполнения: {time.time()-start_time:,.3f}'.replace(',', ' '))     # разделение 3х сначений пробелом
+print(f'время исполнения: {time.time()-start_time:,.3f}'.replace(',', ' '))     # разделение 3х значений пробелом
