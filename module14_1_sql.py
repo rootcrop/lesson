@@ -7,7 +7,7 @@ cursor=connection.cursor()        # "объект" для взаимодейст
 
 cursor.execute('DROP TABLE Users')  # удаляем таблицу
 
-cursor.execute('''                  /* метод execute исполняяет SQL команды                         */
+cursor.execute('''                  /* метод execute исполняет SQL команды                         */
 CREATE TABLE IF NOT EXISTS Users(   /* IF NOT EXISTS        проверка чтобы случайно не стереть      */
 id INTEGER PRIMARY KEY,             /* ключевые команды пишутся капсом                              */
 username TEXT NOT NULL,             /* названия таблиц пишутся 1я с большой буквы Users             */
