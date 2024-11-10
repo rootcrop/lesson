@@ -1,13 +1,12 @@
-import time, random
-import sqlite3
+import time, random, sqlite3
 
 start_time=time.time()
 connection = sqlite3.connect('not_telegram.db')
-cursor=connection.cursor()        # "объект" для взаимодействия с базой данных
+cursor=connection.cursor()
 
 cursor.execute('DROP TABLE Users')  # удаляем таблицу
 
-cursor.execute('''                  /* метод execute исполняет SQL команды                         */
+cursor.execute('''                  /* метод execute исполняет SQL команды                          */
 CREATE TABLE IF NOT EXISTS Users(   /* IF NOT EXISTS        проверка чтобы случайно не стереть      */
 id INTEGER PRIMARY KEY,             /* ключевые команды пишутся капсом                              */
 username TEXT NOT NULL,             /* названия таблиц пишутся 1я с большой буквы Users             */
@@ -27,6 +26,7 @@ for i in range (1,10,2):
 for i in range (1,11,3):
     cursor.execute('DELETE FROM Users WHERE id = ?', (i,))   # , нужна для кортежа
 
+# Сделайте выборку всех записей при помощи fetchall(), где возраст не равен 60
 cursor.execute('SELECT username,email,age,balance FROM Users WHERE age != ?', (60,))
 users=cursor.fetchall()
 for u in users:
