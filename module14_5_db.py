@@ -4,7 +4,7 @@ import  sqlite3, time
 #connection=sqlite3.connect('module14_db.db'); cursor=connection.cursor()
 #connection.commit(); connection.close()
 
-# пишем простой CRUD/ORM   urban-university.ru/members/courses/course999421818026/20240202-0000lekcia-napisanie-primitivnoj-orm-923022744006
+# пишем простой CRUD/ORM
 
 connection=sqlite3.connect('module14_5_db.db')
 cursor=connection.cursor()
