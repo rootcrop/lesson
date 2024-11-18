@@ -10,7 +10,7 @@ from module14_5_bot_config import *     # в config      настройка АП
 from module14_5_bot_keyboards import *  # в keyboards   вывод меню через клавиатуру
 import module14_5_bot_texts as text     # в text        тексты для вывода информации, описание игр
 # from module14_5_admin import *          # создаем небольшую админ панель : есть список пользователей, колв-во юзеров, блокировка\разблок юзеров
-from module14_5_db import *             # urban-university.ru/members/courses/course999421818026/20240201-0000lekcia-plan-napisania-adminpaneli-925364922666
+from module14_5_db import *            
 from module14_5_crud_functions import *
 
 api=API_KEY
