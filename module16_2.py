@@ -1,4 +1,4 @@
-# pip install fastapi, uvicorn              # urban-university.ru/members/courses/course999421818026/20240215-0000lekcia-osnovy-fast-api-918957519537
+# pip install fastapi, uvicorn           
 # run: python3 -m uvicorn main_fastApi:app  # http://127.0.0.1:8000/docs
 
 from fastapi import FastAPI, Path   # Path для проверки переменных
@@ -10,7 +10,7 @@ from typing import Annotated        # Annotated для проверки пере
 # Put       обновить, заменить
 # Delete
 
-app = FastAPI()     # инициализация приложения FastAPI
+app = FastAPI()     # инициализация приложения
 
 # маршрутизация _ корень // routing
 @app.get('/')       # как в чат_ботах, через декоратор: если получаем запрос на / отрабатываем нижестоящую функцию
