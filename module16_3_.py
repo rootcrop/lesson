@@ -1,8 +1,10 @@
-# pip install fastapi, uvicorn              # urban-university.ru/members/courses/course999421818026/20240215-0000lekcia-osnovy-fast-api-918957519537
+# pip install fastapi, uvicorn
 # run: python3 -m uvicorn module16_3:app  # http://127.0.0.1:8000/docs
+
 from fastapi import FastAPI, Path   # Path для проверки переменных
 from typing import Annotated        # Annotated для проверки переменных (с версии 3.9)
 from fastapi import HTTPException
+
 # основные запросы FastAPI
 # Get       это обычно адрес в строке ?переменная=значение   или ?question=answer
 # Post      это формы - оформить заказ в магазин
