@@ -1,0 +1,43 @@
+{% extends 'main.html'%}   <!-- jinja берет за основу из main.html и вставлет ниже -->
+{% block crud_container %}  <!-- берем блок "block crud_container" из main.html -->
+
+    {% if user %}
+        <article class="card container fluid"></article>
+        <br>
+        <!-- Вывод свойств объекта User -->
+        <h2> ID: {{user.id}} </h2>
+        <p> Name: {{user.username}} </p>
+        <p> Age: {{user.age}} </p>
+    {% else %}
+            <section class="container-fluid">
+                <h2 align="center"> Users </h2>
+                <br>
+                <div class="card">
+                    <ul class="list-group list-group-flush"> <!-- оформление списка для не маркированных сообщений из bootstrap -->
+                        <!-- перебор пользователей -->
+                        {% for user in users %}       <!-- эти переменные берутся из module.py: будем получать message из messages -->
+                        <li class="list-group-item">  <!-- li это list item -->
+                            <a href="/user/{{user.id}}">#{{user.id}}</a> {{user.username}}, {{user.age}}
+                        </li>
+                        {% endfor %} <!-- это окончание цикла for -->
+                    </ul>
+                </div>
+            </section>
+<br><br>
+<section class="container-fluid">
+    <form method="post" action="/">
+        <div class="col-auto">
+            <div class="input-group mb3">
+                <!-- второй див внутри, не хорошо, но нужно; name="message" важно при получении формы -->
+                <input type="text" name="user_name" value="{{text}}" class="form-control" placeholder="add new user" aria-label="add user" aria-describedby="button-addon2"/>
+                <input type="text" name="user_age" value="{{text}}" class="form-control" placeholder="add user age" aria-label="add user age" aria-describedby="button-addon2"/>
+                <button class="btn btn-outline-primary" type="submit" id="button-addon2" data-mdb-ripple-color="dark">
+                    add
+                </button>
+            </div>
+        </div>
+    </form>
+</section>
+
+    {% endif %}
+{% endblock %}
