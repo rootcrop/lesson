@@ -72,6 +72,8 @@ from slugify import slugify
 Проверьте, выбрасываются ли исключения в ваших запросах.
 
 Пример результата выполнения программы:
+
+```json 
 [
   {
     "firstname": "Pasha",
@@ -90,3 +92,4 @@ from slugify import slugify
     "slug": "user3"
   }
 ]
+```
